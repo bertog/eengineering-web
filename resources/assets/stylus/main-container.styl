@@ -1,0 +1,135 @@
+html
+	min-height: 100%
+	display: flex
+	flex-direction: column
+	font-family: lato
+	
+body
+	// height: 100%
+	flex: 1
+	flex-basis: 100%
+	display: flex
+	flex-direction: column
+
+header
+	background: whiter
+	h1 
+		margin: 0
+	
+aside
+	background: deep-blue
+	
+main
+	background: blue
+
+article
+	background: green 
+
+footer
+	background: whiter
+	color: deep-blue
+	
+/* Flexbox */
+
+.container
+	flex: 1
+	flex-basis: 100%
+	display: flex 
+	flex-direction: column
+	
+header, footer
+	width: 100%
+	
+header
+	flex-basis: 80px;
+	display: flex
+	flex-direction: row
+	align-items: center
+	justify-content: flex-start
+
+main
+	flex: 1
+	display: flex
+	flex-wrap: wrap
+	
+aside
+	flex-basis: 105px
+	
+article
+	flex: 1
+	display: flex
+	flex-direction: column
+	
+footer
+	flex-basis: 50px;
+	display: flex
+	justify-content: space-between
+	
+@media screen and (max-width: 480px)
+	aside, article
+		flex-basis: 100%
+		
+/* Sub Components */
+header
+	img
+		width: 70px
+		height: auto;
+		margin-left: 20px
+		
+	h1 
+		color: deep-blue
+		font-size: 24px
+		text-transform: uppercase
+		letter-spacing: 2px
+		margin-left: 60px;
+
+aside
+	ul, li 
+		margin: 0
+		padding: 0
+	ul 
+		margin-top: 20px
+		list-style: none
+		li
+			display: block
+			width: 100%
+			text-align: center
+			padding: 10px
+			margin-bottom: 20px
+			a
+				color: whiter
+				text-decoration: none
+				transition: all .3s ease
+				&:hover
+					color: orangish
+
+
+footer
+	ul
+		list-style: none
+		li 
+			display: inline-block
+			padding: 0 20px
+			border-right: solid 1px deep-blue
+			font-weight: 300
+			font-size: 12px
+			&:last-child
+				border: none
+		a 
+			font-weight: 400
+			color: deep-blue
+			text-decoration: none
+			transition: all .3s ease
+			&:hover
+				color: orangish
+				
+.router-view
+	transition: all .5s ease-in-out
+	
+.trax-enter, .trax-leave
+	opacity: 0
+	transform: translate3d(10px, 0, 0)
+	
+.v-link-active
+	color: pale-blue
+	
