@@ -1,32 +1,24 @@
-html, body
-	height: 100%
+html
+	min-height: 100%
+	display: flex
+	flex-direction: column
 	font-family: lato
+	
+body
+	// height: 100%
+	flex: 1
+	flex-basis: 100%
+	display: flex
+	flex-direction: column
 
 header
-	background: pale-blue 
+	background: whiter
 	h1 
 		margin: 0
 	
 aside
 	background: deep-blue
-	ul, li 
-		margin: 0
-		padding: 0
-	ul 
-		margin-top: 20px
-		list-style: none
-		li
-			display: block
-			width: 100%
-			text-align: center
-			padding: 10px
-			a
-				color: whiter
-				text-decoration: none
-				transition: all .3s ease
-				&:hover
-					color: orangish
-
+	
 main
 	background: blue
 
@@ -34,13 +26,14 @@ article
 	background: green 
 
 footer
-	background: pale-blue
-	color: whiter
+	background: whiter
+	color: deep-blue
 	
 /* Flexbox */
 
 .container
-	height: 100%
+	flex: 1
+	flex-basis: 100%
 	display: flex 
 	flex-direction: column
 	
@@ -53,10 +46,7 @@ header
 	flex-direction: row
 	align-items: center
 	justify-content: flex-start
-	
-footer
-	flex-basis: 50px;
-	
+
 main
 	flex: 1
 	display: flex
@@ -71,6 +61,7 @@ article
 	flex-direction: column
 	
 footer
+	flex-basis: 50px;
 	display: flex
 	justify-content: space-between
 	
@@ -86,11 +77,32 @@ header
 		margin-left: 20px
 		
 	h1 
-		color: pale-whiter
+		color: deep-blue
 		font-size: 24px
 		text-transform: uppercase
 		letter-spacing: 2px
 		margin-left: 60px;
+
+aside
+	ul, li 
+		margin: 0
+		padding: 0
+	ul 
+		margin-top: 20px
+		list-style: none
+		li
+			display: block
+			width: 100%
+			text-align: center
+			padding: 10px
+			margin-bottom: 20px
+			a
+				color: whiter
+				text-decoration: none
+				transition: all .3s ease
+				&:hover
+					color: orangish
+
 
 footer
 	ul
@@ -98,15 +110,26 @@ footer
 		li 
 			display: inline-block
 			padding: 0 20px
-			border-right: solid 1px pale-whiter
+			border-right: solid 1px deep-blue
 			font-weight: 300
 			font-size: 12px
 			&:last-child
 				border: none
 		a 
 			font-weight: 400
-			color: whiter
+			color: deep-blue
 			text-decoration: none
 			transition: all .3s ease
 			&:hover
 				color: orangish
+				
+.router-view
+	transition: all .5s ease-in-out
+	
+.trax-enter, .trax-leave
+	opacity: 0
+	transform: translate3d(10px, 0, 0)
+	
+.v-link-active
+	color: pale-blue
+	

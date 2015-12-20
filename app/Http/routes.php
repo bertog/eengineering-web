@@ -8,6 +8,5 @@ Route::get('/dashboard', function() {
     return view('dashboard');
 });
 
-Route::get('/blog', function() {
-   return view('blog');
-});
+Route::get('/blog', 'PostsController@index')->name('BlogIndex');
+
