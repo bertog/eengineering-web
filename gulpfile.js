@@ -5,5 +5,6 @@ require('laravel-elixir-vueify');
 
 elixir(function(mix) {
     mix.stylus('app.styl')
-        .browserify('main.js');
+       .sass('backoffice.scss')
+       .browserify('main.js');
 });

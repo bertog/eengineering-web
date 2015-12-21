@@ -1,5 +1,3 @@
-@extends('layouts.master')
-
 @section('aside')
     <aside>
         <ul>
@@ -10,12 +8,4 @@
             <li><a href="/blog"><i class="fa fa-clipboard fa-2x"></i></a></li>
         </ul>
     </aside>
-@stop
-
-@section('content')
-    <router-view></router-view>
-@stop
-
-@section('jscript')
-    <script src="js/main.js"></script>
 @stop
