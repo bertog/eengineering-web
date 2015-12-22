@@ -8,3 +8,4 @@ elixir(function(mix) {
        .sass('backoffice.scss')
        .browserify('main.js');
 });
+
