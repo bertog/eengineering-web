@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -29,29 +32,48 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        flash("This is a Flash Message");
+        return view('post.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param PostRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        $post = new Post();
+
+        $post->title = $request->title;
+        $post->body = $request->body;
+
+        if ($request->published) {
+            $post->published = $request->published;
+        } else {
+            $post->published = Carbon::now();
+        }
+
+        $post->header_image = $this->UploadAndNameImage($request);
+
+        $user = Auth::user();
+        $user->posts()->save($post);
+
+        return view('post.show', compact('post'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Post $post
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        //post = Post::titled($title)->first();
+        return view('post.show', compact('post'));
     }
 
     /**
@@ -86,5 +108,20 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * @param Request $request
+     * @return string
+     */
+    private function UploadAndNameImage(Request $request)
+    {
+        $file = $request->file('image');
+
+        $fileName = time() . '-' . $file->getClientOriginalName();
+
+        $file->move('images/blog', $fileName);
+
+        return $fileName;
     }
 }

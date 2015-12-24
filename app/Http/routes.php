@@ -25,15 +25,17 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::resource('post', 'PostsController');
+});
 
 Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/dashboard', function() {
         return view('dashboard');
     });
+
+    Route::get('post/create', 'PostsController@create');
 });
 
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-    //Route::get('/home', 'HomeController@index');
-    Route::resource('blog', 'PostsController');
-});
+

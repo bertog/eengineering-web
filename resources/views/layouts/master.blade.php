@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/libs.css">
 </head>
 <body>
 <div id="app"class="container">
     <header>
-        <img src="images/logobig.jpg" alt="Electronic Engineering">
+        <img src="/images/logobig.jpg" alt="Electronic Engineering">
         <h1>Electronic Engineering </h1>
     </header>
     <main>
@@ -32,6 +33,7 @@
     </footer>
 </div>
 
+<script src="/js/libs.js"></script>
 @yield('jscript')
 
 </body>
