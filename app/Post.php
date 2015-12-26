@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -43,5 +44,10 @@ class Post extends Model
         $title = str_replace('-', ' ', $title);
 
         return $query->where(compact('title'));
+    }
+
+    public function scopePublishedPost($query)
+    {
+        return $query->where('published', '<', Carbon::now());
     }
 }

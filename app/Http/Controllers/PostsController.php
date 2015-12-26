@@ -20,9 +20,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $post = Post::find(1);
+        $posts = Post::PublishedPost()->get();
 
-        return view('blog', compact('post'));
+        return view('post.index', compact('posts'));
     }
 
     /**

@@ -597,5 +597,32 @@ footer ul a:hover {
 .blog__footer a i {
   margin-right: 5px;
 }
+.blog__index ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.blog__index ul li {
+  display: block;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.blog__index ul li a {
+  display: block;
+  width: 75%;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fcfcfc;
+  background: #f7846a;
+}
+.blog__index ul li img {
+  width: 75%;
+  height: auto;
+}
 
 /*# sourceMappingURL=app.css.map */
