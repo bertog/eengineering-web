@@ -32,7 +32,6 @@ class PostsController extends Controller
      */
     public function create()
     {
-        flash("This is a Flash Message");
         return view('post.create');
     }
 
@@ -59,6 +58,8 @@ class PostsController extends Controller
 
         $user = Auth::user();
         $user->posts()->save($post);
+
+        flash()->success('Complimenti!','Post Salvato Correttamente');
 
         return view('post.show', compact('post'));
     }

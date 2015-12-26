@@ -35,6 +35,7 @@
 
 <script src="/js/libs.js"></script>
 @yield('jscript')
+@include('flash')
 
 </body>
 </html>
