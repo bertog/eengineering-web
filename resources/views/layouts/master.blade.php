@@ -6,24 +6,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/libs.css">
 </head>
 <body>
 <div id="app"class="container">
     <header>
-        <img src="images/logo-ee.png" alt="Electronic Engineering">
+        <img src="/images/logobig.jpg" alt="Electronic Engineering">
         <h1>Electronic Engineering </h1>
     </header>
     <main>
-        <aside>
-            <ul>
-                <li><a v-link="{ path: '/' }"><i class="fa fa-home fa-2x"></i></a></li>
-                <li><a v-link="{ path: '/about'}"><i class="fa fa-users fa-2x"></i></a></li>
-                <li><a v-link="{ path: '/contacts'}"><i class="fa fa-map-marker fa-2x"></i></a></li>
-                <li><a v-link="{ path: '/brands'}"><i class="fa fa-product-hunt fa-2x"></i></a></li>
-                <li><a href="/blog"><i class="fa fa-clipboard fa-2x"></i></a></li>
-            </ul>
-        </aside>
+        @yield('aside')
         <article>
             @yield('content')
         </article>
@@ -40,7 +33,9 @@
     </footer>
 </div>
 
+<script src="/js/libs.js"></script>
 @yield('jscript')
+@include('flash')
 
 </body>
 </html>

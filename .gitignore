@@ -1,4 +1,5 @@
-.idea
+/.idea
+/old_laravel_51LTS
 /vendor
 /node_modules
 Homestead.yaml
