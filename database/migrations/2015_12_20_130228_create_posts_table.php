@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->dateTime('published');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

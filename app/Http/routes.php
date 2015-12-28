@@ -31,11 +31,25 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::group(['middleware' => ['web', 'auth']], function () {
-    Route::get('/dashboard', function() {
-        return view('dashboard');
+
+    Route::group(['prefix' => 'dashboard'], function() {
+    	Route::get('/', function() {
+    		return view('dashboard.index');
+    	});
+    	Route::get('/posts', function() {
+    		return view('dashboard.post_manager');
+    	});
     });
 
     Route::get('post/create', 'PostsController@create');
+});
+
+Route::group(['middleware' => 'api',
+			  'prefix' => 'api',
+			  'namespace' => 'Api'
+			  ], function() {
+	Route::get('posts', 'PostsController@index');
+	Route::delete('posts/{post}', 'PostsController@destroy');
 });
 
 

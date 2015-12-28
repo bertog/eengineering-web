@@ -33,7 +33,7 @@
     </footer>
 </div>
 
-<script src="/js/libs.js"></script>
+{{--<script src="/js/libs.js"></script>--}}
 @yield('jscript')
 @include('flash')
 

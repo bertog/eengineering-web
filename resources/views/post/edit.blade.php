@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container">
-	<h1>Inserisci un nuovo Post</h1>
+	<h1>Modifica Articolo: {{ $post->title }}</h1>
 
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -18,14 +18,15 @@
         </div>
     @endif
 
-    <form action="/post" method="post" enctype="multipart/form-data">
+    <form action="/post/{{ $post->slug }}" method="post" enctype="multipart/form-data">
         {!! csrf_field() !!}
+        {{ method_field('PUT') }}
         <div class="form-group">
             <label for="title">Titolo:</label>
             <input type="text"
                    name="title"
                    id="title"
-                   value="{{ old('title') }}"
+                   value="{{ $post->title }}"
                    class="form-control"
             >
         </div>
@@ -34,31 +35,32 @@
             <textarea name="body"
                       id="body"
                       cols="30" rows="10"
-                      value="{{ old('body') }}"
                       class="form-control"
                       >
+                      {{ $post->body }}
             </textarea>
         </div>
         <div class="form-group">
             <label for="image">Foto (testata):</label>
+            <img src="/images/blog/{{ $post->header_image }}" alt="Foto di Testata Attuale">
             <input type="file"
                    name="image"
                    id="file"
                    class="form-control"
             >
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="published">Data Pubblicazione:</label>
             <input type="date"
                    name="published"
                    id="published"
-                   value="{{ old('published') }}"
+                   value="{{ $post->published }}"
                    class="form-control"
             >
-        </div>
+        </div> -->
         <div class="form-group">
         	<input type="submit" 
-        		   value="Salva"
+        		   value="Aggiorna"
         		   class="btn btn-primary">
         </div>
     </form>

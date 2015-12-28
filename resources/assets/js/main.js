@@ -1,4 +1,5 @@
 var Vue = require('vue');
+var swal = require('sweetalert');
 
 var VueRouter = require('vue-router');
 

@@ -4,10 +4,16 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Post extends Model
 {
     protected $fillable = ['title', 'header_image' ,'body', 'published'];
+
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
 
     public static function boot()
     {

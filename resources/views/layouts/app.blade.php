@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Electronic Engineering - Dashboard</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -14,7 +14,9 @@
     <!-- Styles -->
 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/backoffice.css">
+    <link rel="stylesheet" href="/css/libs.css">
 
     <style>
         body {
@@ -25,6 +27,8 @@
             margin-right: 6px;
         }
     </style>
+    @yield('script.header')
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default">
@@ -50,7 +54,19 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     @if (!Auth::guest())
-                        <li><a href="/post/create">Nuovo Articolo</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" 
+                                        data-toggle="dropdown" 
+                                        role="button" 
+                                        aria-expanded="false"
+                                        >
+                                Gestione Articoli <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/post/create">Scrivi Articolo</a></li>
+                                <li><a href="/dashboard/posts">Gestisci Articolo</a></li>
+                            </ul>
                     @endif
                 </ul>
 
@@ -77,8 +93,10 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="/js/dashboard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {{--<script src="/js/libs.js"></script>--}}
+    @yield('script.footer')
 </body>
 </html>
