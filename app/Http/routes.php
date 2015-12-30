@@ -39,6 +39,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     	Route::get('/posts', function() {
     		return view('dashboard.post_manager');
     	});
+		Route::get('/brands', 'BrandsController@manager');
+        Route::get('/brands/upload', 'BrandsController@upload');
     });
 
     Route::get('post/create', 'PostsController@create');
@@ -50,6 +52,11 @@ Route::group(['middleware' => 'api',
 			  ], function() {
 	Route::get('posts', 'PostsController@index');
 	Route::delete('posts/{post}', 'PostsController@destroy');
+
+    Route::post('brands/upload', 'BrandsController@upload');
+    Route::get('brands', 'BrandsController@index');
+    Route::get('brands/visible', 'BrandsController@visible');
+    Route::put('brands/{brand}', 'BrandsController@update');
 });
 
 
