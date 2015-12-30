@@ -3,7 +3,6 @@ var swal = require('sweetalert');
 
 var VueRouter = require('vue-router');
 
-Vue.use(require('vue-resource'));
 Vue.use(VueRouter);
 
 var router = new VueRouter();

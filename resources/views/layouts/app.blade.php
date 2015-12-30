@@ -67,21 +67,6 @@
                                 <li><a href="/post/create">Scrivi Articolo</a></li>
                                 <li><a href="/dashboard/posts">Gestisci Articolo</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"
-                               data-toggle="dropdown"
-                               role="button"
-                               aria-expanded="false"
-                            >
-                                Gestione Marchi<span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/dashboard/brands/upload">Carica Marchi</a></li>
-                                <li><a href="/dashboard/brands">Gestisci Marchi</a></li>
-                            </ul>
-                        </li>
                     @endif
                 </ul>
 

@@ -5,8 +5,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
-    "dropzone": "github:enyo/dropzone",
-    "laravel-elixir": "^4.1.2",
+    "laravel-elixir": "^4.1.1",
     "laravel-elixir-stylus": "^1.0.1",
     "laravel-elixir-vueify": "^1.0.1",
     "sweetalert": "^1.1.3",
