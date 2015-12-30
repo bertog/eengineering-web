@@ -542,6 +542,24 @@ footer ul a:hover {
   width: 100%;
   padding: 10px 40px;
 }
+.brands {
+  background: #fff;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.grid__row ul {
+  list-style: none;
+  margin: 0;
+}
+.grid__row ul li {
+  width: 100px;
+  margin: 20px;
+  display: inline-block;
+}
+.grid__row ul li img {
+  width: 100%;
+}
 .blog {
   width: 100%;
   -webkit-flex: 1;
