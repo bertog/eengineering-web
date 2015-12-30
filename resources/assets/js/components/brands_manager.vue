@@ -11,7 +11,7 @@
 				   v-model="search"
 				   placeholder="Cerca ..."
 				   >
-			<nav>
+			<!-- <nav>
 			  <ul class="pagination">
 			    <li>
 			      <a href="#" 
@@ -28,7 +28,7 @@
 			      </a>
 			    </li>
 			  </ul>
-			</nav>	   
+			</nav>	    -->
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -39,7 +39,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="brand in brands | filterBy search | orderBy 'visible' -1 | limitBy 10 offset">
+					<tr v-for="brand in brands | filterBy search | orderBy 'visible' -1">
 						<td>
 							<img :src="'/images/brands/' + brand.logo" alt="">
 						</td>
