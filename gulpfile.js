@@ -8,11 +8,5 @@ elixir(function(mix) {
        .sass('backoffice.scss')
        .browserify('main.js')
        .browserify('dashboard.js')
-       .scripts([
-            'libs/sweetalert.min.js'
-       ], 'public/js/libs.js')
-       .styles([
-           'libs/sweetalert.css'
-       ], 'public/css/libs.css');
 });
 
