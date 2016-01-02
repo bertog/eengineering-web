@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +26,9 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::resource('post', 'PostsController');
+    Route::get('/', function () {
+        return view('home');
+    });
 });
 
 Route::group(['middleware' => ['web', 'auth']], function () {
@@ -39,6 +40,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     	Route::get('/posts', function() {
     		return view('dashboard.post_manager');
     	});
+        Route::get('/posts/archive', function() {
+            return view('dashboard.post_archive');
+        });
 		Route::get('/brands', 'BrandsController@manager');
         Route::get('/brands/upload', 'BrandsController@upload');
     });
@@ -51,7 +55,9 @@ Route::group(['middleware' => 'api',
 			  'namespace' => 'Api'
 			  ], function() {
 	Route::get('posts', 'PostsController@index');
+    Route::get('posts/archive', 'PostsController@archive');
 	Route::delete('posts/{post}', 'PostsController@destroy');
+	Route::put('posts/{id}/restore', 'PostsController@restore');
 
     Route::post('brands/upload', 'BrandsController@upload');
     Route::get('brands', 'BrandsController@index');

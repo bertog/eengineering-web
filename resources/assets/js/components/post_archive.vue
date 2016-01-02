@@ -4,67 +4,59 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<td>Id</td>
-						<td>Id. Unico</td>
-						<td>Titolo</td>
-						<td>Data Pubblicazione</td>
-						<td></td>
-						<td></td>
+						<th>Id.Univoco</th>
+						<th>Titolo</th>
+						<th>Pubblicato il:</th>
+						<th>Rimosso il:</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="post in posts">
-						<td>{{ post.id }}</td>
+					<tr v-for="post in archive">
 						<td>{{ post.slug }}</td>
 						<td>{{ post.title }}</td>
 						<td>{{ post.published | formatDate }}</td>
+						<td>{{ post.deleted_at | formatDate }}</td>
 						<td>
-							<a href="/post/{{ post.slug }}/edit"
-							   class="btn btn-primary"	
-							   >
-								<i class="fa fa-pencil"></i>
-							</a>						
-						</td>
-						<td>
-							<button @click="trashPost(post)"
-									class="btn btn-danger"
-									>
-								<i class="fa fa-trash"></i>
+							<button class="btn btn-primary"
+							        @click="restore(post)"
+							        >
+							        Recupera
 							</button>
-						</td>	
+						</td>
 					</tr>
 				</tbody>
-			</table>	
+			</table>
 		</div>
 	</div>
-	<!-- <pre>{{ $data | json }}</pre> -->
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
-				posts: ''
-			};
+				message: 'Hei! Sono il Post Archive',
+				archive: ''
+			}
 		},
 		ready() {
-			this.getPosts();
+			this.getArchive();
 		},
 		methods: {
-			getPosts() {
-				this.$http.get('/api/posts').then( (posts) => {
-					this.posts = posts.data;	
-				});
+			getArchive() {
+				this.$http.get('/api/posts/archive').then( (archive) => {
+					this.archive = archive.data;
+				})
 			},
-			trashPost(post) {
+			restore(post) {
 				swal({
 	                title: "Sei sicuro?",
-	                text: "Stai per eliminare l'articolo! Se lo elimini non sarà più visualizzato!",
+	                text: "Vuoi davvero far tornare questo Articolo visibile",
 	                type: "warning",
 	                showCancelButton: true,
 	                closeOnConfirm: true,
             	}, () => {
-            		this.$http.delete('/api/posts/' + post.slug).then( (response) => {
+            		this.$http.put('/api/posts/' + post.id + '/restore').then( (response) => {
             			swal({
             				title: 'Fatto!',
             				text: response.data.message,
@@ -72,12 +64,12 @@
             				showConfirmButton: false,
             				timer: 2000
             			});
-            			this.posts.$remove(post);
+            			this.archive.$remove(post);
             		}, (response) => {
             			alert('Rotto Tutto!');
             		});
             	});
 			}
 		}
-	};
+	}
 </script>

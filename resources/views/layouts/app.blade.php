@@ -65,7 +65,8 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/post/create">Scrivi Articolo</a></li>
-                                <li><a href="/dashboard/posts">Gestisci Articolo</a></li>
+                                <li><a href="/dashboard/posts">Gestisci Articoli</a></li>
+                                <li><a href="/dashboard/posts/archive">Archivio Articoli</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

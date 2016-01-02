@@ -14276,6 +14276,70 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	data: function data() {
 		return {
+			message: 'Hei! Sono il Post Archive',
+			archive: ''
+		};
+	},
+	ready: function ready() {
+		this.getArchive();
+	},
+
+	methods: {
+		getArchive: function getArchive() {
+			var _this = this;
+
+			this.$http.get('/api/posts/archive').then(function (archive) {
+				_this.archive = archive.data;
+			});
+		},
+		restore: function restore(post) {
+			var _this2 = this;
+
+			swal({
+				title: "Sei sicuro?",
+				text: "Vuoi davvero far tornare questo Articolo visibile",
+				type: "warning",
+				showCancelButton: true,
+				closeOnConfirm: true
+			}, function () {
+				_this2.$http.put('/api/posts/' + post.id + '/restore').then(function (response) {
+					swal({
+						title: 'Fatto!',
+						text: response.data.message,
+						type: 'success',
+						showConfirmButton: false,
+						timer: 2000
+					});
+					_this2.archive.$remove(post);
+				}, function (response) {
+					alert('Rotto Tutto!');
+				});
+			});
+		}
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"container\">\n\t\t<div class=\"col-md-12\">\n\t\t\t<table class=\"table table-striped\">\n\t\t\t\t<thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<th>Id.Univoco</th>\n\t\t\t\t\t\t<th>Titolo</th>\n\t\t\t\t\t\t<th>Pubblicato il:</th>\n\t\t\t\t\t\t<th>Rimosso il:</th>\n\t\t\t\t\t\t<th></th>\n\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody>\n\t\t\t\t\t<tr v-for=\"post in archive\">\n\t\t\t\t\t\t<td>{{ post.slug }}</td>\n\t\t\t\t\t\t<td>{{ post.title }}</td>\n\t\t\t\t\t\t<td>{{ post.published | formatDate }}</td>\n\t\t\t\t\t\t<td>{{ post.deleted_at | formatDate }}</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<button class=\"btn btn-primary\" @click=\"restore(post)\">\n\t\t\t\t\t\t\t        Recupera\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\n\t\t</div>\n\t</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/bertog/Code/electroengineering/resources/assets/js/components/post_archive.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":32,"vue-hot-reload-api":12}],36:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+	data: function data() {
+		return {
 			posts: ''
 		};
 	},
@@ -14283,11 +14347,6 @@ exports.default = {
 		this.getPosts();
 	},
 
-	filters: {
-		format_date: function format_date(published) {
-			return published.substr(0, 10);
-		}
-	},
 	methods: {
 		getPosts: function getPosts() {
 			var _this = this;
@@ -14323,7 +14382,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"container\">\n\t\t<div class=\"col-md-12\">\n\t\t\t<table class=\"table table-striped\">\n\t\t\t\t<thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Id</td>\n\t\t\t\t\t\t<td>Id. Unico</td>\n\t\t\t\t\t\t<td>Titolo</td>\n\t\t\t\t\t\t<td>Data Pubblicazione</td>\n\t\t\t\t\t\t<td></td>\n\t\t\t\t\t\t<td></td>\n\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody>\n\t\t\t\t\t<tr v-for=\"post in posts\">\n\t\t\t\t\t\t<td>{{ post.id }}</td>\n\t\t\t\t\t\t<td>{{ post.slug }}</td>\n\t\t\t\t\t\t<td>{{ post.title }}</td>\n\t\t\t\t\t\t<td>{{ post.published | format_date }}</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<a href=\"/post/{{ post.slug }}/edit\" class=\"btn btn-primary\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<button @click=\"trashPost(post)\" class=\"btn btn-danger\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-trash\"></i>\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t</td>\t\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\t\n\t\t</div>\n\t</div>\n\t<!-- <pre>{{ $data | json }}</pre> -->\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"container\">\n\t\t<div class=\"col-md-12\">\n\t\t\t<table class=\"table table-striped\">\n\t\t\t\t<thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Id</td>\n\t\t\t\t\t\t<td>Id. Unico</td>\n\t\t\t\t\t\t<td>Titolo</td>\n\t\t\t\t\t\t<td>Data Pubblicazione</td>\n\t\t\t\t\t\t<td></td>\n\t\t\t\t\t\t<td></td>\n\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody>\n\t\t\t\t\t<tr v-for=\"post in posts\">\n\t\t\t\t\t\t<td>{{ post.id }}</td>\n\t\t\t\t\t\t<td>{{ post.slug }}</td>\n\t\t\t\t\t\t<td>{{ post.title }}</td>\n\t\t\t\t\t\t<td>{{ post.published | formatDate }}</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<a href=\"/post/{{ post.slug }}/edit\" class=\"btn btn-primary\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<button @click=\"trashPost(post)\" class=\"btn btn-danger\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-trash\"></i>\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t</td>\t\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\t\n\t\t</div>\n\t</div>\n\t<!-- <pre>{{ $data | json }}</pre> -->\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -14335,7 +14394,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":32,"vue-hot-reload-api":12}],36:[function(require,module,exports){
+},{"vue":32,"vue-hot-reload-api":12}],37:[function(require,module,exports){
 'use strict';
 
 var _post_manager = require('./components/post_manager.vue');
@@ -14346,6 +14405,10 @@ var _brands_manager = require('./components/brands_manager.vue');
 
 var _brands_manager2 = _interopRequireDefault(_brands_manager);
 
+var _post_archive = require('./components/post_archive.vue');
+
+var _post_archive2 = _interopRequireDefault(_post_archive);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Vue = require('vue');
@@ -14354,17 +14417,23 @@ var Dropzone = require('dropzone');
 
 Vue.use(require('vue-resource'));
 
+Vue.filter('formatDate', function (value) {
+	var splitted_date = value.substr(0, 10).split('-');
+	return splitted_date[2] + '/' + splitted_date[1] + '/' + splitted_date[0];
+});
+
 new Vue({
 	el: '#dashboard',
 
 	components: {
 		post_manager: _post_manager2.default,
+		post_archive: _post_archive2.default,
 		brands_manager: _brands_manager2.default
 	},
 
 	ready: function ready() {}
 });
 
-},{"./components/brands_manager.vue":34,"./components/post_manager.vue":35,"dropzone":1,"sweetalert":11,"vue":32,"vue-resource":17}]},{},[36]);
+},{"./components/brands_manager.vue":34,"./components/post_archive.vue":35,"./components/post_manager.vue":36,"dropzone":1,"sweetalert":11,"vue":32,"vue-resource":17}]},{},[37]);
 
 //# sourceMappingURL=dashboard.js.map

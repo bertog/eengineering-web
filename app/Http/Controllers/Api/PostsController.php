@@ -20,4 +20,18 @@ class PostsController extends Controller
         $post->delete();
         return ['message' => 'Articolo eliminato con successo!'];
     }
+
+    public function archive()
+    {
+        return Post::onlyTrashed()->get();
+    }
+
+    public function restore($id) 
+    {
+        $post = Post::withTrashed()
+                ->where('id', '=', $id)
+                ->restore();
+
+        return ['message' => 'Articolo nuovamente visibile'];
+    }
 }
