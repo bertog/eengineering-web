@@ -28,6 +28,8 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'title' => $title,
         'body' => $faker->paragraph,
         'slug' => str_slug($title),
+        'header_image' => 'spacex.jpg',
+        'user_id' => 1,
         'published' => $faker->date()
     ];
 });

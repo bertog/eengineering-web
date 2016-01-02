@@ -29,3 +29,7 @@
         </div>
     </div>
 @stop
+
+@section('jscript')
+    <script src="/js/main.js"></script>
+@stop
