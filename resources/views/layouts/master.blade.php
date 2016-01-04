@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>.:: Electronic Engineering Web Site ::.</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
@@ -23,7 +24,7 @@
     </main>
     <footer>
         <ul>
-            <li>Copyright <i class="fa fa-copyright"></i> 2016</li>
+            <li>Copyright <i class="fa fa-copyright"></i> {{ date('Y') }}</li>
             <li>Tutti i diritti riservati</li>
             <li>Design & Coding by <a href="http://www.litemedia.it" target="_blank">LiteMedia</a></li>
         </ul>

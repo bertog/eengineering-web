@@ -1,15 +1,14 @@
 html
-	min-height: 100%
-	display: flex
-	flex-direction: column
+	//min-height: 100%
+	// display: flex
+	// flex-direction: column
 	font-family: lato
 	
-body
-	// height: 100%
-	flex: 1
-	flex-basis: 100%
-	display: flex
-	flex-direction: column
+// body
+// 	//flex: 1
+// 	//flex-basis: 100%
+// 	display: flex
+// 	flex-direction: column
 
 header
 	background: white
@@ -20,10 +19,10 @@ aside
 	background: deep-blue
 	
 main
-	background: blue
+	background: whiter
 
 article
-	background: green 
+	background: whiter
 
 footer
 	background: whiter
@@ -32,12 +31,16 @@ footer
 /* Flexbox */
 
 .container
-	flex: 1
-	flex-basis: 100%
-	display: flex 
+	// flex: 1
+	// flex-basis: 100%
+	// display: flex 
+	// flex-direction: column
+	display: flex
 	flex-direction: column
+	height: 100vh
 	
 header, footer
+	flex-shrink: 0
 	width: 100%
 	
 header
@@ -48,7 +51,7 @@ header
 	justify-content: flex-start
 
 main
-	flex: 1
+	flex: 1 0 auto
 	display: flex
 	flex-wrap: wrap
 	
@@ -103,7 +106,18 @@ aside
 				&:hover
 					color: orangish
 
-
+@media screen and (max-width: 480px) 
+	aside
+		ul
+			display: flex
+			justify-content: space-between
+			width: 100%
+			margin: 0 5px
+			li 
+				font-size: 14px;
+				padding: 10 0
+				margin: 0
+				display: inline-block
 footer
 	ul
 		list-style: none
