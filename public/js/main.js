@@ -15061,7 +15061,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"brands\">\n\t\t<div class=\"grid\">\n\t\t\t<div class=\"grid__row\">\n\t\t\t\t<ul>\n\t\t\t\t\t<li v-for=\"brand in brands\">\n\t\t\t\t\t\t<img :src=\"'/images/brands/' + brand.logo\" alt=\"{{ brand.alternate }}\" title=\"{{ brand.alternate }}\">\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\t\n\t\t\t</div>\n\t\t</div>\n\t</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"brands\">\n\t\t<h1>assistenza</h1>\n\t\t<h3>Questo è un elenco dei marchi su cui forniamo assistenza. Non sono gli unici. Nel caso non troviate il vostro <a href=\"mailto:info@electronic-engineering.com\">contattateci</a></h3>\n\t\t<div class=\"grid\">\n\t\t\t<div class=\"grid__row\">\n\t\t\t\t<ul>\n\t\t\t\t\t<li v-for=\"brand in brands\">\n\t\t\t\t\t\t<img :src=\"'/images/brands/' + brand.logo\" alt=\"{{ brand.alternate }}\" title=\"{{ brand.alternate }}\">\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\t\n\t\t\t</div>\n\t\t</div>\n\t</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -15081,7 +15081,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"contacts\">\n\t\t<h1>contatti</h1>\n\t\t<div class=\"grid\">\n\t\t\t<div class=\"grid__row\">\n\t\t\t\t<div class=\"grid__column grid__column--contacts\">\n\t\t\t\t\t<p>Via Finalmarina 32/F</p>\n\t\t\t\t\t<p>10126 TORINO - ITALY</p>\n\t\t\t\t\t<p>Tel. &amp; Fax. <strong>011.663.44.00</strong></p>\n\t\t\t\t\t<br>\n\t\t\t\t\t<p>Siamo aperti dalle <strong>10:00</strong> alle <strong>13:00</strong></p>\n\t\t\t\t\t<p>e dalle <strong>14:00</strong> alle <strong>19:00</strong></p>\n\t\t\t\t\t<p>Chiuso <strong>LUNEDI</strong> e <strong>SABATO</strong></p>\n\t\t\t\t\t<br>\n\t\t\t\t\t<p>Partita IVA <strong>06474800015</strong></p>\n\t\t\t\t\t<br>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<a href=\"mailto:info@electronic-engineering.com\">\n\t\t\t\t\t\t\t<i class=\"fa fa-envelope\"></i>info@electronic-engineering.com\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"grid__column grid__column--contacts\">\n\t\t\t\t\t<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.645065788623!2d7.668673415568782!3d45.03213017909828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478812b9fb6d0a37%3A0x6460f0b61e1593ac!2sVia+Finalmarina%2C+32%2C+10126+Torino!5e0!3m2!1sen!2sit!4v1450550566922\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"contacts\">\n\t\t<h1>contatti</h1>\n\t\t<div class=\"grid\">\n\t\t\t<div class=\"grid__row\">\n\t\t\t\t<div class=\"grid__column grid__column--contacts\">\n\t\t\t\t\t<p>Via Finalmarina 32/F</p>\n\t\t\t\t\t<p>10126 TORINO - ITALY</p>\n\t\t\t\t\t<p>Tel. &amp; Fax. <strong>011.663.44.00</strong></p>\n\t\t\t\t\t<br>\n\t\t\t\t\t<p>Siamo aperti dalle <strong>10:00</strong> alle <strong>13:00</strong></p>\n\t\t\t\t\t<p>e dalle <strong>14:00</strong> alle <strong>19:00</strong></p>\n\t\t\t\t\t<p>Chiuso <strong>LUNEDI</strong> e <strong>SABATO</strong></p>\n\t\t\t\t\t<br>\n\t\t\t\t\t<p>Partita IVA <strong>06474800015</strong></p>\n\t\t\t\t\t<br>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<a href=\"mailto:info@electronic-engineering.com\">\n\t\t\t\t\t\t\t<i class=\"fa fa-envelope\"></i>info@electronic-engineering.com\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"grid__column grid__column--contacts\">\n\t\t\t\t\t<div class=\"google-maps\">\n\t\t\t\t\t\t<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.645065788623!2d7.668673415568782!3d45.03213017909828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478812b9fb6d0a37%3A0x6460f0b61e1593ac!2sVia+Finalmarina%2C+32%2C+10126+Torino!5e0!3m2!1sen!2sit!4v1450550566922\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -15094,14 +15094,33 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":32,"vue-hot-reload-api":11}],37:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.default = {};
+exports.default = {
+	data: function data() {
+		return {
+			image: '',
+			fade: false
+		};
+	},
+	ready: function ready() {
+		this.randomImg();
+		var rnd = setInterval(this.randomImg, 10000);
+	},
+
+	methods: {
+		randomImg: function randomImg() {
+			this.fade = false;
+			this.image = Math.floor(Math.random() * 15 + 1);
+			this.fade = true;
+		}
+	}
+};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"splash\">\n\t\t<img src=\"images/electro_splash.jpg\" alt=\"Electronic Engineering\">\n\t\t<h3>Una lunga storia di qualità</h3>\n\t\t<h1>Electronic Engineering</h1>\t\n\t\t<h3>Centro Assistenza Tecnica per la Musica e lo Spettacolo</h3>\n\t</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"splash\">\n\t\t<img :src=\"'/images/splash/' + image + '-2048.jpg'\" srcset=\"/images/splash/{{image}}-4096.jpg, 4096w, \n\t\t\t \t\t /images/splash/{{image}}-2048.jpg, 2048w, \n\t\t\t \t\t /images/splash/{{image}}-1024.jpg, 1024w\" alt=\"Electronic Engineering\">\n\t\t<h3>Una lunga storia di qualità</h3>\n\t\t<h1>Electronic Engineering</h1>\t\n\t\t<h3>Centro Assistenza Tecnica per la Musica e lo Spettacolo</h3>\n\t</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

@@ -2,6 +2,10 @@
 	margin-top: 50px
 	margin-left: 20px
 	margin-right: 20px
+	@media screen and (max-width: 480px)
+		margin-top: 20px
+		margin-left: 5px
+		margin-right: 5px
 
 	+has(row)
 		display: flex
@@ -12,6 +16,7 @@
 		flex-basis: 200px
 		padding-left: 20px
 		padding-right: 20px
+		
 		+variant(about)
 			h2
 				color: deep-blue
