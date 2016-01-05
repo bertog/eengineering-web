@@ -1,5 +1,7 @@
 <template>
 	<div class="brands">
+		<h1>assistenza</h1>
+		<h3>Questo è un elenco dei marchi su cui forniamo assistenza. Non sono gli unici. Nel caso non troviate il vostro <a href="mailto:info@electronic-engineering.com">contattateci</a></h3>
 		<div class="grid">
 			<div class="grid__row">
 				<ul>

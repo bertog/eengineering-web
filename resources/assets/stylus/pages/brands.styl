@@ -1,15 +1,45 @@
 .brands
 	background: white
-	flex: 1
-
-.grid__row
-	ul 
-		list-style: none
+	h1
+		margin:0
+		font-weight: 300
+		font-size: 24px
+		color: pale-whiter
+		text-transform: uppercase
+		background: pale-blue
+		width: 100%
+		padding: 10px 40px
+		@media screen and (max-width: 480px)
+			padding: 10px 20px
+	h3
 		margin: 0
-		li
-			width: 100px
-			margin: 20px 
-			display: inline-block
-			img
-				width: 100%
+		font-weight: 300
+		color: blacky
+		font-size: 16px
+		width: 100%
+		padding: 10px 40px
+		@media screen and (max-width: 480px)
+			font-size: 12px
+			text-align: justify
+			padding: 10px 20px
+		a 
+			color: deep-blue
+			font-size: 16px
+			font-weight: 400
+			text-decoration: none
+			&:hover
+				color: orangish
+	
+	.grid__row
+		ul 
+			list-style: none
+			margin: 0
+			@media screen and (max-width: 480px)
+				padding-left: 5px
+			li
+				width: 100px
+				margin: 20px 
+				display: inline-block
+				img
+					width: 100%
 		

@@ -1,6 +1,5 @@
 .contacts
 	background: whiter
-	flex: 1
 	h1
 		margin:0
 		font-weight: 300
@@ -10,4 +9,22 @@
 		background: pale-blue
 		width: 100%
 		padding: 10px 40px
+		@media screen and (max-width: 480px)
+			padding: 10px 20px
+	.google-maps
+		position: relative
+		padding-bottom: 75%
+		height: 0
+		overflow: hidden
+		@media screen and (max-width: 480px)
+			margin-top: 2em
+			margin-bottom: 2em
+		iframe
+			position: absolute
+			top: 0
+			left: 0
+			width: 90%
+			height: 100%
+			@media screen and (max-width: 480px)
+				width: 100%
 		

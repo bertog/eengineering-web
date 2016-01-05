@@ -19,7 +19,7 @@
             <h1>{{ $post->title  }}</h1>
         </div>
         <div class="blog__post">
-            {!! nl2br($post->body) !!}
+            {!! $post->body !!}
         </div>
         <div class="blog__footer">
         	<p>

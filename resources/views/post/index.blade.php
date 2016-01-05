@@ -13,6 +13,7 @@
 @stop
 
 @section('content')
+    <h1>elenco articoli</h1>
     <div class="blog">
         <div class="blog__index">
             <ul>
