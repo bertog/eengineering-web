@@ -15,6 +15,9 @@
 @section('content')
     <h1>elenco articoli</h1>
     <div class="blog">
+        <p>In questa pagina troverete una serie di articoli. 
+           Questi articoli contengono consigli tecnici che vi aiuterrano a conoscere, 
+           capire e sfruttare al meglio i vostri strumenti musicali :)</p>
         <div class="blog__index">
             <ul>
                 @foreach($posts as $post)
