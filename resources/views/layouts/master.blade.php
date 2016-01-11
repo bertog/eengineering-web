@@ -6,11 +6,24 @@
     <title>.:: Electronic Engineering Web Site ::.</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <!--[if gte IE 7]>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+              integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+              crossorigin="anonymous">
+    <![endif]-->
 
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/libs.css">
 </head>
 <body>
+<!--[if gte IE 7]>
+    <div class="container">
+        <div class="alert alert-danger">
+           <h3>Il tuo browser non è più supportato</h3>
+           <p>Per visualizzare correttamente questo sito devi utilizzare un browser moderno</p>
+        </div>
+    </div>
+<![endif]-->
 <div id="app"class="container">
     <header>
         <img src="/images/logobig.jpg" alt="Electronic Engineering">
@@ -28,9 +41,9 @@
             <li>Tutti i diritti riservati</li>
             <li>Design & Coding by <a href="http://www.litemedia.it" target="_blank">LiteMedia</a></li>
         </ul>
-        <ul>
+        <!-- <ul>
             <li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
-        </ul>
+        </ul> -->
     </footer>
 </div>
 
