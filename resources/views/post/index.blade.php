@@ -4,9 +4,9 @@
     <aside>
         <ul>
             <li><a href="/"><i class="fa fa-home fa-2x"></i></a></li>
-            <li><a href="/#!/about"><i class="fa fa-users fa-2x"></i></a></li>
-            <li><a href="/#!/contacts"><i class="fa fa-map-marker fa-2x"></i></a></li>
-            <li><a href="/#!/brands"><i class="fa fa-product-hunt fa-2x"></i></a></li>
+            <li><a href="/about"><i class="fa fa-users fa-2x"></i></a></li>
+            <li><a href="/contacts"><i class="fa fa-map-marker fa-2x"></i></a></li>
+            <li><a href="/brands"><i class="fa fa-product-hunt fa-2x"></i></a></li>
             <li><a href="/post"><i class="fa fa-clipboard fa-2x"></i></a></li>
         </ul>
     </aside>

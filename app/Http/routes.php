@@ -23,13 +23,6 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-    Route::resource('post', 'PostsController');
-    Route::get('/', function () {
-        return view('home');
-    });
-});
 
 Route::group(['middleware' => ['web', 'auth']], function () {
 
@@ -63,6 +56,14 @@ Route::group(['middleware' => 'api',
     Route::get('brands', 'BrandsController@index');
     Route::get('brands/visible', 'BrandsController@visible');
     Route::put('brands/{brand}', 'BrandsController@update');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::resource('post', 'PostsController');
+    Route::get('/{vue_capture?}', function () {
+            return view('home');
+        })->where('vue_capture', '[\/\w\.-]*');
 });
 
 

@@ -6,7 +6,10 @@ var VueRouter = require('vue-router');
 Vue.use(require('vue-resource'));
 Vue.use(VueRouter);
 
-var router = new VueRouter();
+var router = new VueRouter({
+	hashbang: false,
+	history: true
+});
 
 import HomePage from './pages/HomePage.vue'
 import AboutPage from './pages/AboutPage.vue'
