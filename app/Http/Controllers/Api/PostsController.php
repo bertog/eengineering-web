@@ -12,7 +12,7 @@ class PostsController extends Controller
 {
     public function index()
     {
-        return Post::PublishedPost()->get();
+        return Post::all();
     }
 
     public function destroy(Post $post)
