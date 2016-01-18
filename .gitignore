@@ -2,6 +2,7 @@
 /old_laravel_51LTS
 /vendor
 /node_modules
+/public/images
 Homestead.yaml
 Homestead.json
 .env

@@ -41,7 +41,10 @@
 				<tbody>
 					<tr v-for="brand in brands | filterBy search | orderBy 'visible' -1">
 						<td>
-							<img :src="'/images/brands/' + brand.logo" alt="">
+							<img :src="'/images/brands/' + brand.logo" 
+							      alt=""
+							      class="brands--logo"
+							      >
 						</td>
 						<td>
 							<input type="text"
